@@ -62,7 +62,7 @@ class Artist(models.Model):
         verbose_name='Фото артиста'
     )
     def __str__(self):
-        return self.title
+        return self.name
     
     class Meta:
         verbose_name = 'Артист'

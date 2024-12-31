@@ -3,7 +3,7 @@
 {% block content %}
 
     <!-- LOADER -->
-    <div id="slider_loading" class="slider_loading"></div>
+    <!-- <div id="slider_loading" class="slider_loading"></div> -->
     <!-- LOGO -->
 {% include 'include/header.html' %}
     <!-- MAIN MENU -->
@@ -91,24 +91,17 @@
                     <!-- TESTIMONIALS -->
                     <h3>Testimonials</h3>
                     <div class="testimonials">
-                        <div class="testimonial-item animated">
-                            <div class="item-left">
-                                <img src="{% static 'images/28.jpg' %}" alt="" />
+                        {% for reviews in review %}
+                            <div class="testimonial-item animated">
+                                <div class="item-left">
+                                    <img src="{{ reviews.image_people.url }}" alt="" />
+                                </div>
+                                <div class="item-right">
+                                    <p>{{ reviews.description }}</p>
+                                    <p class="item-client">{{ reviews.name }}</p>
+                                </div>
                             </div>
-                            <div class="item-right">
-                                <p>Suspendisse ipsum urna, pellentesque eget sagittis eget, porta eget ligula. Mauris id posuere nisl. Aliquam sit amet urna lorem. Donec et odio et velit ornare dapibus a sit amet odio. Praesent ornare cursus ante quis fringilla. Vivamus id egestas sapien.</p>
-                                <p class="item-client">Jim Stark</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-item animated">
-                            <div class="item-left">
-                                <img src="{% static 'images/30.jpg' %}" alt="" />
-                            </div>
-                            <div class="item-right">
-                                <p>Suspendisse ipsum urna, pellentesque eget sagittis eget, porta eget ligula. Mauris id posuere nisl. Aliquam sit amet urna lorem. Donec et odio et velit ornare dapibus a sit amet odio. Praesent ornare cursus ante quis fringilla. Vivamus id egestas sapien.</p>
-                                <p class="item-client">John Stone</p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -120,34 +113,24 @@
                     <h1>Artists</h1>
                     <hr/>
                     <ul class="grid">
-                        <li>
-                            <figure>
-                                <div>
-                                    <img src="{% static 'images/artist.jpg' %}" alt="img05">
-                                </div>
-                                <figcaption>
-                                    <h4>Jacob Black</h4>
-                                    <span>Suspendisse ipsum urna, pellentesque eget sagittis eget, porta eget ligula. Vivamus id egestas sapien...</span>
-                                    <a id="first" href="#">Portfolio</a>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        <li>
-                            <figure>
-                                <div>
-                                    <img src="{% static 'images/artist2.jpg' %}" alt="img06">
-                                </div>
-                                <figcaption>
-                                    <h4>Michael Stark</h4>
-                                    <span>Suspendisse ipsum urna, pellentesque eget sagittis eget, porta eget ligula. Vivamus id egestas sapien...</span>
-                                    <a id="second" href="#">Portfolio</a>
-                                </figcaption>
-                            </figure>
-                        </li>
+                        {% for artist in artists %}
+                            <li>
+                                <figure>
+                                    <div>
+                                        <img src="{{ artist.image_artist.url }}" alt="{{ artist.name }}">
+                                    </div>
+                                    <figcaption>
+                                        <h4>{{ artist.name }}</h4>
+                                        <span>{{ artist.description }}</span>
+                                        <a id="first" href="#">Portfolio</a>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
-        </article>
+        </article>        
         <!-- FAQ PAGE -->
         <article>
             <div class="page-content-small" data-stellar-ratio="2">
@@ -276,143 +259,5 @@
             </div>
         </article>
     </section>
-    <!-- JS FILES -->
-    <script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/jquery.ascensor.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/slider.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/backstretch.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/stellar.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/toucheffects.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/lightgallery.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/googlemap.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/custom.js' %}" type="text/javascript"></script>
-    <script type="text/javascript">
-        // FIRST ARTIST PORTFOLIO IMAGES
-        jQuery(document).ready(function () {
-            jQuery('#first').click(function (e) {
-                e.preventDefault();
-                jQuery(this).lightGallery({
-                    dynamic: true,
-                    zoom: true,
-                    fullScreen: true,
-                    autoplay: false,
-                    thumbnail: true,
-                    download: true,
-                    counter: true,
-                    dynamicEl: [
-                        {
-                            "src": "{% static 'images/4.jpg' %}",
-                            "thumb": "{% static 'images/4-thumb.jpg' %}",
-                            "subHtml": "Nibh mauris lucem"
-                },
-                        {
-                            "src": "{% static 'images/5.jpg' %}",
-                            "thumb": "{% static 'images/5-thumb.jpg' %}",
-                            "subHtml": "Occaecat est quis"
-                },
-                        {
-                            "src": "{% static 'images/6.jpg' %}",
-                            "thumb": "{% static 'images/6-thumb.jpg' %}",
-                            "subHtml": "Lorem Ipsum Dolor"
-                }
-            ]
-                });
-            });
-        });
 
-         // SECOND ARTIST PORTFOLIO IMAGES
-        jQuery(document).ready(function () {
-            jQuery('#second').click(function (e) {
-                e.preventDefault();
-                jQuery(this).lightGallery({
-                    dynamic: true,
-                    zoom: true,
-                    fullScreen: true,
-                    autoplay: false,
-                    thumbnail: true,
-                    download: true,
-                    counter: true,
-                    dynamicEl: [
-                        {
-                            "src": "{% static 'images/7.jpg' %}",
-                            "thumb": "{% static 'images/7-thumb.jpg' %}",
-                            "subHtml": "Velit singulis ut"
-                },
-                        {
-                            "src": "{% static 'images/8.jpg' %}",
-                            "thumb": "{% static 'images/8-thumb.jpg' %}",
-                            "subHtml": "Lorem Ipsum Dolor"
-                },
-                        {
-                            "src": "{% static 'images/9.jpg' %}",
-                            "thumb": "{% static 'images/9-thumb.jpg' %}",
-                            "subHtml": "Occaecat est quis"
-                }
-            ]
-                });
-            });
-        });
-
-         // PHOTO GALLERY IMAGES
-        jQuery(document).ready(function () {
-            jQuery('#photos').click(function (e) {
-                e.preventDefault();
-                jQuery(this).lightGallery({
-                    dynamic: true,
-                    zoom: true,
-                    fullScreen: true,
-                    autoplay: false,
-                    thumbnail: true,
-                    download: true,
-                    counter: true,
-                    dynamicEl: [
-                        {
-                            "src": "{% static 'images/10.jpg' %}",
-                            "thumb": "{% static 'images/10-thumb.jpg' %}",
-                            "subHtml": "Occaecat est quis"
-                },
-                        {
-                            "src": "{% static 'images/9.jpg' %}",
-                            "thumb": "{% static 'images/9-thumb.jpg' %}",
-                            "subHtml": "Velit singulis ut"
-                },
-                        {
-                            "src": "{% static 'images/5.jpg' %}",
-                            "thumb": "{% static 'images/5-thumb.jpg' %}",
-                            "subHtml": "Lorem Ipsum Dolor"
-                }
-            ]
-                });
-            });
-        });
-         // VIDEO GALLERY YOUTUBE AND VIMEO VIDEOS (YOUTUBE WORKS ONLY ON A SERVER NOT ON YOUR COMPUTER!)
-        jQuery(document).ready(function () {
-            jQuery('#videos').click(function (e) {
-                e.preventDefault();
-                jQuery(this).lightGallery({
-                    dynamic: true,
-                    zoom: false,
-                    fullScreen: false,
-                    autoplayControls: false,
-                    thumbnail: true,
-                    download: true,
-                    counter: true,
-                    dynamicEl: [
-                        {
-                            "src": "http://vimeo.com/23534361",
-                            "thumb": "{% static 'images/4-thumb.jpg' %}",
-                            "subHtml": "Nibh mauris lucem"
-                },
-                        {
-                            "src": "http://www.youtube.com/watch?v=kuceVNBTJio",
-                            "thumb": "{% static 'images/5-thumb.jpg' %}",
-                            "subHtml": "Lorem Ipsum Dolor"
-                }
-            ]
-                });
-            });
-        });
-    </script>
-</body>
-
-</html>
+{% endblock %}
