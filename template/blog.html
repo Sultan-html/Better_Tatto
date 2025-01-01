@@ -9,9 +9,9 @@
         <meta name="description" content="">
         <meta name="keywords" content="">
         <!-- CSS FILES -->
-        <link href="css/normalize.css" rel="stylesheet" type="text/css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
-        <link href="css/media.css" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/normalize.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/media.css' %}" rel="stylesheet" type="text/css">
         <!-- JS FILES -->
         <script type="text/javascript" src="js/modernizr.custom.js"></script>
         <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
     <body>
         <!-- LOGO -->
         <header>
-            <img src="images/logo.png" alt="" />
+            <img src="{% static 'images/logo.png' %}" alt="" />
         </header>
         <!-- MAIN MENU -->
         <a id="mobile-menu" href="#">Menu</a>
@@ -55,7 +55,7 @@
                             <li>
                                 <figure>
                                     <div>
-                                        <img src="images/blog1.jpg" alt="">
+                                        <img src="{% static 'images/blog1.jpg' %}" alt="">
                                     </div>
                                     <figcaption>
                                         <div class="dateicon">June,12 2013</div>
@@ -81,7 +81,7 @@
                             <li>
                                 <figure>
                                     <div>
-                                        <img src="images/blog2.jpg" alt="">
+                                        <img src="{% static 'images/blog2.jpg' %}" alt="">
                                     </div>
                                     <figcaption>
                                         <div class="dateicon">June,12 2013</div>
@@ -107,7 +107,7 @@
                             <li>
                                 <figure>
                                     <div>
-                                        <img src="images/blog3.jpg" alt="">
+                                        <img src="{% static 'images/blog3.jpg' %}" alt="">
                                     </div>
                                     <figcaption>
                                         <div class="dateicon">June,12 2013</div>

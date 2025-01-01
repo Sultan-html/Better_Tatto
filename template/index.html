@@ -144,55 +144,18 @@
                 <div class="content">
                     <h1>FAQ</h1>
                     <hr/>
-                    <div class="faq">
-                        <div class="accordion-header">Vestibulum porta, tortor elementum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
+                    {% for faqs in faq %}
+                        <div class="faq">
+                            <div class="accordion-header">{{ faqs.question }}</div>
+                            <div class="accordion-content">
+                                <p>{{ faqs.answer }}</p>
+                            </div>
                         </div>
-                        <div class="accordion-header">Est odio egestas justo ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Tortor elementum luctus dictum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Dapidus dio egestas justo ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Vestibulum porta, tortor elementum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Tortor elementum luctus dictum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Dapidus dio egestas justo ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Vestibulum porta, tortor elementum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Vestibulum porta, tortor elementum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Est odio egestas justo ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                        <div class="accordion-header">Tortor elementum luctus dictum ?</div>
-                        <div class="accordion-content">
-                            <p>Vestibulum porta, tortor elementum luctus dictum, est odio egestas justo, dapibus aliquet sem nisl vel augue. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum. Nam laoreet pulvinar eros, sit amet sodales est venenatis eu. Fusce eu sapien tortor, a consequat nunc. Nunc pulvinar consequat turpis, sed vulputate nibh lacinia rutrum.</p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </article>
+        
         <!-- CONTACT PAGE -->
         <article>
             <!-- GOOGLE MAP -->
@@ -205,46 +168,36 @@
                     <!-- CONTACT INFO -->
                     <div class="contact-info">
                         <p>
-                            <span class="label">Address: Lorem str. New York 3483 USA</span>
+                            <span class="label">Address: {{ contactus.Address }}</span>
                         </p>
                         <p>
-                            <span class="label">Phone: 0800 123 121</span>
+                            <span class="label">Phone: {{ contactus.Phone }}</span>
                         </p>
                         <p>
-                            <span class="label">Fax: 0800 123 128</span>
+                            <span class="label">Fax: {{ contactus.Fax }}</span>
                         </p>
                         <p>
-                            <span class="label">E-Mail: info@company.com</span>
+                            <span class="label">E-Mail: {{ contactus.Mail }}</span>
                         </p>
                         <!-- SOCIAL ICONS -->
                         <ul class="social-icons">
                             <li>
-                                <a href="#">
+                                <a href="{{ contactus.facebook }}">
                                     <img class="social-icon" src="{% static 'images/social-icons/facebook.png' %}" alt="Facebook" />
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ contactus.twitter }}">
                                     <img class="social-icon" src="{% static 'images/social-icons/twitter.png' %}" alt="Twitter" />
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img class="social-icon" src="{% static 'images/social-icons/flickr.png' %}" alt="Flickr" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
+                                <a href="{{ contactus.pinterest }}">
                                     <img class="social-icon" src="{% static 'images/social-icons/pinterest.png' %}" alt="Pinterest" />
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img class="social-icon" src="{% static 'images/social-icons/vimeo.png' %}" alt="Vimeo" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
+                                <a href="{{ contactus.youtube }}">
                                     <img class="social-icon" src="{% static 'images/social-icons/youtube.png' %}" alt="YouTube" />
                                 </a>
                             </li>
@@ -253,15 +206,121 @@
                     <hr/>
                     <h3>Contact Form</h3>
                     <!-- CONTACT FORM -->
-                    <form id="contactForm" action="processform.php" method="post">
-                        <label>Your Name:</label>
-                        <input type="text" name="senderName" id="senderName" required="required" maxlength="40" />
-                        <label>Your Email:</label>
-                        <input type="email" name="senderEmail" id="senderEmail" required="required" maxlength="50" />
-                        <label>Your Message:</label>
-                        <textarea name="message" id="message" required="required"></textarea>
-                        <input type="submit" id="sendMessage" name="sendMessage" class="button" value="Send Message" />
-                    </form>
+                    <style>
+                        /* Общий стиль формы */
+                        .contact_form {
+                            background: linear-gradient(145deg, #1e1e1e, #2a2a2a); /* Градиентный фон формы */
+                            padding: 30px;
+                            border-radius: 12px;
+                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 -4px 10px rgba(255, 255, 255, 0.05); /* Тени с разных сторон */
+                            max-width: 500px;
+                            margin: auto;
+                        }
+                    
+                        /* Стиль для полей ввода */
+                        .contact_form input[type="text"],
+                        .contact_form textarea {
+                            width: 100%;
+                            padding: 15px;
+                            margin-bottom: 20px;
+                            border: none;
+                            border-radius: 8px;
+                            background: #2d2d2d; /* Тёмный фон внутри полей */
+                            color: #fff;
+                            font-size: 16px;
+                            box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.9), inset 0 -2px 4px rgba(255, 255, 255, 0.1); /* Внутренняя сложная тень */
+                            transition: all 0.3s ease;
+                        }
+                    
+                        /* Фокус на полях ввода */
+                        .contact_form input[type="text"]:focus,
+                        .contact_form textarea:focus {
+                            outline: none;
+                            background: linear-gradient(145deg, #3a3a3a, #323232); /* Градиент на фокусе */
+                            box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.2); /* Подсветка при фокусе */
+                            transform: scale(1.02); /* Лёгкое увеличение при фокусе */
+                        }
+                    
+                        /* Стиль кнопки */
+                        .contact_form button {
+                            width: 100%;
+                            padding: 15px;
+                            background: linear-gradient(145deg, #333, #444); /* Градиент кнопки */
+                            color: #fff;
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-size: 18px;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8); /* Чёрная тень кнопки */
+                            transition: all 0.3s ease;
+                        }
+                    
+                        /* Наведение на кнопку */
+                        .contact_form button:hover {
+                            background: linear-gradient(145deg, #444, #555); /* Более светлый градиент */
+                            box-shadow: 0 10px 20px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.2); /* Более выразительные тени */
+                            transform: translateY(-3px); /* Лёгкий подъём */
+                        }
+                    
+                        /* Активная кнопка */
+                        .contact_form button:active {
+                            transform: translateY(2px); /* Нажатие */
+                            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.9); /* Более глубокая тень */
+                        }
+                    
+                        /* Сообщение об успехе */
+                        .returnmessage {
+                            color: #fff;
+                            background: #2a2a2a;
+                            padding: 12px;
+                            border-radius: 8px;
+                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Чёрная тень */
+                            margin-bottom: 20px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+                    
+                        /* Листы */
+                        .contact_form ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            display: flex;
+                            gap: 10px;
+                        }
+                    
+                        /* Стили для элементов списка */
+                        .contact_form ul li {
+                            flex: 1;
+                        }
+                    
+                        /* Текстовая область */
+                        .contact_form textarea {
+                            height: 100px;
+                            resize: none; /* Убираем возможность изменения размера */
+                        }
+                    </style>
+                    
+                    <form method="POST" class="contact_form">
+                        {% csrf_token %}
+                        <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
+                        <div class="first">
+                            <ul>
+                                <li>
+                                    <input type="text" name="name" placeholder="Имя">
+                                </li>
+                                <li>
+                                    <input type="text" name="email" placeholder="Почта">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="last">
+                            <textarea name='message' placeholder="Сообщение"></textarea>
+                        </div>
+                        <button name="newslater" type="submit">Отправить</button>
+                    </form>                    
                 </div>
             </div>
         </article>
