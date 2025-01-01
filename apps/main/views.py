@@ -35,3 +35,6 @@ def index(request):
     """)
 
     return render(request, 'index.html',locals())
+
+def blog(request):
+    return render(request, 'blog.html', locals())
