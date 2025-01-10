@@ -1,6 +1,5 @@
 from pyngrok import ngrok
 
-# Указываем порт, на котором работает сервер Django
+ngrok.set_auth_token("2rRlFAfAGBMpwtj4vWJRztpA5S0_2uXThQn3fGX9jtjHdVjKC")
 public_url = ngrok.connect(8000)
-
-print(f"Ваш публичный URL: {public_url}")
+print("Ngrok URL:", public_url)
