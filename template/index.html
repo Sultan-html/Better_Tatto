@@ -38,7 +38,7 @@
     <nav id="sub-menu">
         <ul>
             <li>
-                <h6>title</h6>
+                <h6 style="margin-top: 20px ;">Welcome</h6>
             </li>
         </ul>
     </nav>
@@ -158,172 +158,259 @@
         
         <!-- CONTACT PAGE -->
         <article>
-            <!-- GOOGLE MAP -->
-            <div id="google-map" class="google-map"></div>
             <div class="page-content-small" data-stellar-ratio="2">
                 <div class="content">
-                    <h1>Contact Us</h1>
-                    <!-- GOOGLE MAP FOR SMALL MOBILE DEVICES -->
-                    <div id="mobile-map"></div>
-                    <!-- CONTACT INFO -->
-                    <div class="contact-info">
-                        <p>
-                            <span class="label">Address: {{ contactus.Address }}</span>
-                        </p>
-                        <p>
-                            <span class="label">Phone: {{ contactus.Phone }}</span>
-                        </p>
-                        <p>
-                            <span class="label">Fax: {{ contactus.Fax }}</span>
-                        </p>
-                        <p>
-                            <span class="label">E-Mail: {{ contactus.Mail }}</span>
-                        </p>
-                        <!-- SOCIAL ICONS -->
-                        <ul class="social-icons">
-                            <li>
-                                <a href="{{ contactus.facebook }}">
-                                    <img class="social-icon" src="{% static 'images/social-icons/facebook.png' %}" alt="Facebook" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ contactus.twitter }}">
-                                    <img class="social-icon" src="{% static 'images/social-icons/twitter.png' %}" alt="Twitter" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ contactus.pinterest }}">
-                                    <img class="social-icon" src="{% static 'images/social-icons/pinterest.png' %}" alt="Pinterest" />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ contactus.youtube }}">
-                                    <img class="social-icon" src="{% static 'images/social-icons/youtube.png' %}" alt="YouTube" />
-                                </a>
-                            </li>
-                        </ul>
+                    <h1 class="title">Contact Us</h1>
+                    <div class="contact-page-layout">
+                        <!-- Боковая колонка с контактной информацией -->
+                        <div class="sidebar">
+                            <h3>Contact Info</h3>
+                            <div class="contact-info">
+                                <p>
+                                    <span class="label">Address:</span> {{ contactus.Address }}
+                                </p>
+                                <p>
+                                    <span class="label">Phone:</span> {{ contactus.Phone }}
+                                </p>
+                                <p>
+                                    <span class="label">Fax:</span> {{ contactus.Fax }}
+                                </p>
+                                <p>
+                                    <span class="label">E-Mail:</span> {{ contactus.Mail }}
+                                </p>
+                                <!-- SOCIAL ICONS -->
+                                <ul class="social-icons">
+                                    <li>
+                                        <a href="{{ contactus.facebook }}">
+                                            <img class="social-icon" src="{% static 'images/social-icons/facebook.png' %}" alt="Facebook" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ contactus.twitter }}">
+                                            <img class="social-icon" src="{% static 'images/social-icons/twitter.png' %}" alt="Twitter" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ contactus.pinterest }}">
+                                            <img class="social-icon" src="{% static 'images/social-icons/pinterest.png' %}" alt="Pinterest" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ contactus.youtube }}">
+                                            <img class="social-icon" src="{% static 'images/social-icons/youtube.png' %}" alt="YouTube" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- Основная колонка с картой и формой -->
+                        <div class="main-content">
+                            <h3>Our Location</h3>
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://embed.2gis.com/?url=https://2gis.kg/osh/firm/70000001054702939?m=72.80285%2C40.51932%2F16" 
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0;" 
+                                    allowfullscreen 
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                            <h3>Contact Form</h3>
+                            <form method="POST" class="contact_form">
+                                {% csrf_token %}
+                                <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
+                                <div class="first">
+                                    <ul>
+                                        <li>
+                                            <input type="text" name="name" placeholder="Имя">
+                                        </li>
+                                        <li>
+                                            <input type="text" name="email" placeholder="Почта">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="last">
+                                    <textarea name='message' placeholder="Сообщение"></textarea>
+                                </div>
+                                <button name="newslater" type="submit">Отправить</button>
+                            </form>
+                        </div>
                     </div>
-                    <hr/>
-                    <h3>Contact Form</h3>
-                    <!-- CONTACT FORM -->
-                    <style>
-                        /* Общий стиль формы */
-                        .contact_form {
-                            background: linear-gradient(145deg, #1e1e1e, #2a2a2a); /* Градиентный фон формы */
-                            padding: 30px;
-                            border-radius: 12px;
-                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7), 0 -4px 10px rgba(255, 255, 255, 0.05); /* Тени с разных сторон */
-                            max-width: 500px;
-                            margin: auto;
-                        }
-                    
-                        /* Стиль для полей ввода */
-                        .contact_form input[type="text"],
-                        .contact_form textarea {
-                            width: 100%;
-                            padding: 15px;
-                            margin-bottom: 20px;
-                            border: none;
-                            border-radius: 8px;
-                            background: #2d2d2d; /* Тёмный фон внутри полей */
-                            color: #fff;
-                            font-size: 16px;
-                            box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.9), inset 0 -2px 4px rgba(255, 255, 255, 0.1); /* Внутренняя сложная тень */
-                            transition: all 0.3s ease;
-                        }
-                    
-                        /* Фокус на полях ввода */
-                        .contact_form input[type="text"]:focus,
-                        .contact_form textarea:focus {
-                            outline: none;
-                            background: linear-gradient(145deg, #3a3a3a, #323232); /* Градиент на фокусе */
-                            box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.2); /* Подсветка при фокусе */
-                            transform: scale(1.02); /* Лёгкое увеличение при фокусе */
-                        }
-                    
-                        /* Стиль кнопки */
-                        .contact_form button {
-                            width: 100%;
-                            padding: 15px;
-                            background: linear-gradient(145deg, #333, #444); /* Градиент кнопки */
-                            color: #fff;
-                            border: none;
-                            border-radius: 8px;
-                            cursor: pointer;
-                            font-size: 18px;
-                            text-transform: uppercase;
-                            letter-spacing: 1px;
-                            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8); /* Чёрная тень кнопки */
-                            transition: all 0.3s ease;
-                        }
-                    
-                        /* Наведение на кнопку */
-                        .contact_form button:hover {
-                            background: linear-gradient(145deg, #444, #555); /* Более светлый градиент */
-                            box-shadow: 0 10px 20px rgba(0, 0, 0, 1), 0 0 5px rgba(255, 255, 255, 0.2); /* Более выразительные тени */
-                            transform: translateY(-3px); /* Лёгкий подъём */
-                        }
-                    
-                        /* Активная кнопка */
-                        .contact_form button:active {
-                            transform: translateY(2px); /* Нажатие */
-                            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.9); /* Более глубокая тень */
-                        }
-                    
-                        /* Сообщение об успехе */
-                        .returnmessage {
-                            color: #fff;
-                            background: #2a2a2a;
-                            padding: 12px;
-                            border-radius: 8px;
-                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Чёрная тень */
-                            margin-bottom: 20px;
-                            text-align: center;
-                            font-size: 14px;
-                        }
-                    
-                        /* Листы */
-                        .contact_form ul {
-                            list-style: none;
-                            padding: 0;
-                            margin: 0;
-                            display: flex;
-                            gap: 10px;
-                        }
-                    
-                        /* Стили для элементов списка */
-                        .contact_form ul li {
-                            flex: 1;
-                        }
-                    
-                        /* Текстовая область */
-                        .contact_form textarea {
-                            height: 100px;
-                            resize: none; /* Убираем возможность изменения размера */
-                        }
-                    </style>
-                    
-                    <form method="POST" class="contact_form">
-                        {% csrf_token %}
-                        <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
-                        <div class="first">
-                            <ul>
-                                <li>
-                                    <input type="text" name="name" placeholder="Имя">
-                                </li>
-                                <li>
-                                    <input type="text" name="email" placeholder="Почта">
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="last">
-                            <textarea name='message' placeholder="Сообщение"></textarea>
-                        </div>
-                        <button name="newslater" type="submit">Отправить</button>
-                    </form>                    
                 </div>
             </div>
         </article>
+        
+        <style>
+        /* Основной стиль */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Заголовки */
+        h1.title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        
+        /* Макет страницы */
+        .contact-page-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        /* Боковая панель */
+        .sidebar {
+            flex: 1;
+            max-width: 300px;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            animation: fadeInLeft 1.5s ease;
+        }
+        
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info .label {
+            font-weight: bold;
+            color: #9e9e9e;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .social-icons li {
+            list-style: none;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Основное содержимое */
+        .main-content {
+            flex: 2;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+            animation: fadeInRight 1.5s ease;
+        }
+        
+        .map-container {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Форма */
+        .contact_form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact_form input[type="text"],
+        .contact_form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #2d2d2d;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .contact_form input[type="text"]:focus,
+        .contact_form textarea:focus {
+            background: #3a3a3a;
+            transform: scale(1.02);
+            outline: none;
+        }
+        
+        .contact_form button {
+            padding: 15px;
+            background: linear-gradient(145deg, #333, #555);
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        
+        .contact_form button:hover {
+            background: linear-gradient(145deg, #555, #777);
+            transform: translateY(-3px);
+        }
+        
+        /* Анимации */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        </style>
+        
+        
     </section>
 
 {% endblock %}

@@ -12,6 +12,7 @@ ADMIN_ID = '5420298695'
 bot = TeleBot(TELEGRAM_TOKEN, threaded=False)
 admin_id = ADMIN_ID
 
+
 @bot.message_handler(commands=['start'])
 def start(message:types.Message):
     TelegramUser.objects.get_or_create(username = message.from_user.username, id_user=message.from_user.id, first_name = message.from_user.first_name, last_name = message.from_user.last_name,)

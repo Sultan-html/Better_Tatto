@@ -26,11 +26,11 @@ def index(request):
             page_contact = models.Contacts.objects.create(name=name, email=email, message=message)
             if page_contact:
                 get_text(f"""
-                Оставлена заявка на обратный звонок 📞
+    Оставлена заявка на обратный звонок 📞
                             
-    Имя пользователя:  {name}
-    Почта: {email}
-    Сообщение: {message}
+        Имя пользователя: {name}
+        Почта: {email}
+        Сообщение: {message}
 
     """)
 

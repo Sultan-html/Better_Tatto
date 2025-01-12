@@ -127,6 +127,7 @@ class Contacts(models.Model):
     class Meta:
         verbose_name = '11) Обратная связь'
         verbose_name_plural = '11) Обратная связь'
+        
 class ConactUs(models.Model):
      Address = models.CharField(
         max_length=40,
